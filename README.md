@@ -10,7 +10,7 @@ Ubuntu 12.04-64 with Go installed as well as Vim and all the Go plugins for Vim
 * Vim
 * Vim/Golang [Plugins](http://tip.golang.org/misc/vim/readme.txt)
 * Additional [Vim plugins](http://0value.com/my-Go-centric-Vim-setup) __COMING SOON__
-* Copies over your Git config & public SSH key (~/.gitconfig & ~/.ssh/id_rsa.pub) for turnkey git access
+* Copies over your Git config (~/.gitconfig) for turnkey git access
 
 ## Usage
 
@@ -45,3 +45,9 @@ This box synchronizes your home ```~``` directory on your host to to ```/host/``
 to:
 
 ```config.vm.synced_folder "~/", "/host"```
+
+### For Git:
+
+You'll need to generate an SSH key in the VM and add it to your GitHub account before you can push from within the VM. So inside the Vagrant VM follow these [instructions](https://help.github.com/articles/generating-ssh-keys).
+
+Then copy the contents of ```~/.ssh/id_rsa.pub``` into [https://github.com/settings/ssh](https://github.com/settings/ssh)
