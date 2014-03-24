@@ -22,4 +22,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Now run manual shell script for additional provisioning:
   config.vm.provision "shell", path: "./provision.sh"
 
+  # Copy the user's .gitconfig (if it exists) so they don't
+  # have to reconfigure Git in the VM:
+  config.vm.provision "file", source: "~/.gitconfig", destination: "/home/vagrant/.gitconfig"
+  
+  # Copy the user's public ssh key (if it exists) so they don't
+  # have to regenerate new keys for services like GitHub.  
+  # Note: this means the VM will appear as the host machine, which
+  # you may not prefer.
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/id_rsa.pub"
 end

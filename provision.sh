@@ -1,5 +1,12 @@
 #!/bin/bash
+
+# Update, get python-software-properties in order to get add-apt-repository, 
+# then update (for latest git version):
 apt-get update
+apt-get install python-software-properties
+add-apt-repository -y ppa:git-core/ppa
+apt-get update
+
 
 # Vim & Curl:
 apt-get install -y vim curl
