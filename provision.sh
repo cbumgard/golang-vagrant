@@ -16,10 +16,16 @@ apt-get install -y nfs-common portmap
 
 # Configure Go & Vim:
 # http://tip.golang.org/misc/vim/readme.txt?m=text
+# Configure Go workspace:
 su vagrant -c "echo 'GOROOT=/usr/local/go' >> ~/.profile"
+su vagrant -c "echo 'GOPATH=/home/vagrant/gocode' >> ~/.profile"
+su vagrant -c "echo 'GOBIN=\$GOPATH/bin' >> ~/.profile"
+su vagrant -c "echo 'PATH=\$PATH:\$GOBIN' >> ~/.profile"
+su vagrant -c "mkdir -p /home/vagrant/gocode"
+# Vim config:
 su vagrant -c "echo 'filetype off' > ~/.vimrc"
 su vagrant -c "echo 'filetype plugin indent off' >> ~/.vimrc"
-su vagrant -c "echo 'set runtimepath+=$GOROOT/misc/vim' >> ~/.vimrc"
+su vagrant -c "echo 'set runtimepath+=\$GOROOT/misc/vim' >> ~/.vimrc"
 su vagrant -c "echo 'filetype plugin indent on' >> ~/.vimrc"
 su vagrant -c "echo 'syntax on' >> ~/.vimrc"
 su vagrant -c "echo 'autocmd FileType go autocmd BufWritePre <buffer> Fmt' >> ~/.vimrc"
