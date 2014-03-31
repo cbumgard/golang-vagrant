@@ -22,6 +22,9 @@ su vagrant -c "echo 'GOPATH=/home/vagrant/gocode' >> ~/.profile"
 su vagrant -c "echo 'GOBIN=\$GOPATH/bin' >> ~/.profile"
 su vagrant -c "echo 'PATH=\$PATH:\$GOBIN' >> ~/.profile"
 su vagrant -c "mkdir -p /home/vagrant/gocode"
+# Vim bindings for bash shell:
+su vagrant -c "echo 'set editing-mode vi' > ~/.inputrc"
+su vagrant -c "echo 'set keymap vi-command' >> ~/.inputrc"
 # Vim config:
 su vagrant -c "echo 'filetype off' > ~/.vimrc"
 su vagrant -c "echo 'filetype plugin indent off' >> ~/.vimrc"
