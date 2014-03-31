@@ -9,6 +9,7 @@ Ubuntu 12.04-64 with Go installed as well as Vim and all the Go plugins for Vim
 * Git latest stable
 * Vim
 * Vim/Golang [Plugins](http://tip.golang.org/misc/vim/readme.txt)
+* Bash configured for Vim shortcuts
 * Additional [Vim plugins](http://0value.com/my-Go-centric-Vim-setup) __COMING SOON__
 * Copies over your Git config (~/.gitconfig) for turnkey git access
 
